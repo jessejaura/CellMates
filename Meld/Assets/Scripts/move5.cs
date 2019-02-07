@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NVIDIA.Flex;
 
-public class move4 : MonoBehaviour
+public class move5 : MonoBehaviour
 {
     public float speed = 1;
     public float topSpeed = 2;
@@ -29,7 +29,7 @@ public class move4 : MonoBehaviour
     bool grounded = true;
     bool playerGrounded = true;
     GameObject otherPlayer = null;
-    move4 otherPlayersMove = null;
+    move5 otherPlayersMove = null;
     RaycastHit[] hits = new RaycastHit[10];
 
     // Start is called before the first frame update
@@ -40,14 +40,14 @@ public class move4 : MonoBehaviour
         player1 = GameObject.FindWithTag(player1Tag);
         player2 = GameObject.FindWithTag(player2Tag);
         // figure out which player this is so we can do separate groundedness calculation
-        if (this == player1.GetComponent<move4>())
+        if (this == player1.GetComponent<move5>())
             otherPlayer = player2;
-        else if (this == player2.GetComponent<move4>())
+        else if (this == player2.GetComponent<move5>())
             otherPlayer = player1;
         if (otherPlayer == null)
             print("player: " + name);
         else
-        otherPlayersMove = otherPlayer.GetComponent<move4>();
+        otherPlayersMove = otherPlayer.GetComponent<move5>();
         membrane = GameObject.FindWithTag(membraneTag);
         membraneActor = membrane.GetComponent<FlexClothActor>();
         // particleGetter = membrane.GetComponent<ParticleGetter>();
